@@ -110,8 +110,20 @@ public class Main {
 			}
 		
 		
-			
-		
+		//To Do
+		//get the value up from parsetable
+		Stack<Integer> s = new Stack<>();
+		s.pop(1);	//so it runs the first time
+		stacktop = s.peek();
+		if (stacktop > 0) {
+			table_entry = ParseTable(stacktop, abs(token_number));	
+			switch (table_entry) {
+				case 1:	
+					//To DO
+					//Pop and push for it
+					break;		
+				//To DO
+				// Rest of the cases
 		
 		
 	}
