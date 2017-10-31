@@ -126,32 +126,32 @@ public class Main {
 					
 					s.pop();
 					s.push("BBlock");
-					s.push("kwdprog");
+					//s.push("kwdprog");
 					break;
 				case 2: //BBlock = brace1 Vargroup Stmts brace2
 					s.pop();
-					s.push("}");
+					//s.push("}");
 					s.push("Stmts");
 					s.push("Vargroup");
-					s.push("{");
+					//s.push("{");
 					break;
 				case 3: //Vargroup = kwdvars PPvarlist
 					s.pop();
 					s.push("PPvarlist");
-					s.push("kwdvars");
+					//s.push("kwdvars");
 					break;
 				case 4:	//Vargroup = eps
 					break;
 				case 5: //PPvarlist = parens1 Varlist parens2
 					s.pop();
-					s.push(")");
+					//s.push(")");
 					s.push("Varlist");
-					s.push("(");
+					//s.push("(");
 					break;
 				case 6: //Varlist = Vardecl semi Varlist
 					s.pop();
 					s.push("Varlist");
-					s.push(";");
+					//s.push(";");
 					break;
 				case 7: //Varlist = eps
 					break;
