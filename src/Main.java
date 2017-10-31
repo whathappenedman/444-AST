@@ -11,23 +11,26 @@ public class Main {
 		Scanner kb = new Scanner(test);
 		String x = "";
 		
-		ParseTable pt = new ParseTable();
-		while (kb.hasNext()){
-			x = kb.next();
-			if (x.equals("-1")){
-				break;
-			}
-			System.out.println(x);
-		}
+//		ParseTable pt = new ParseTable();
+//		while (kb.hasNext()){
+//			x = kb.next();
+//			if (x.equals("-1")){
+//				break;
+//			}
+//			System.out.println(x);
 		
 		
+		int token_number;
 		//terminal tokens
 		String current_token = "";
-		current_token = scan.next();
+		//current_token = kb.next();
 		while (kb.hasNext()) {
+			current_token = kb.next();			//testing 
 			switch (current_token) {
 				case "kwdprog":
 					token_number = -1;
+					System.out.println("kwdprog");
+					
 					break;
 				case "kwdvars":
 					token_number = -2;
@@ -58,9 +61,11 @@ public class Main {
 					break;	
 				case "{":
 					token_number = -11;
+					System.out.println("{");
 					break;	
 				case "}":
 					token_number = -12;
+					System.out.println("}");
 					break;	
 				case ";":
 					token_number = -13;
@@ -106,10 +111,11 @@ public class Main {
 					break;
 				default:
 					token_number = -27;
+					System.out.println("non terminal");
 					break;
 			}
 		
-		
+	/*	
 		//To Do
 		//get the value up from parsetable
 		Stack<Integer> s = new Stack<>();
@@ -124,8 +130,8 @@ public class Main {
 					break;		
 				//To DO
 				// Rest of the cases
+		*/
 		
-		
-	}
-
+		}
+	}	
 }
