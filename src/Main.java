@@ -130,7 +130,7 @@ public class Main {
 			12 - Stprint
 			13 - Stwhile
 			14 - PPexprs
-			15 - PPexprs1
+			15 - PPexpr1
 			16 - Exprlist
 			17 - Moreexprs
 			18 - Expr'
@@ -145,12 +145,6 @@ public class Main {
 			27 - Gthan
 			28 - Opadd
 			29 - Opmul
-			
-			
-			
-			
-			
-			
 			*/
 			
 		//Stack and it's manipulation
@@ -163,19 +157,19 @@ public class Main {
 				case 1:	//Pgm = kwdprog BBlock
 
 					s.pop();
-					s.push("BBlock");
+					s.push("2");
 					//s.push("kwdprog");
 					break;
 				case 2: //BBlock = brace1 Vargroup Stmts brace2
 					s.pop();
 					//s.push("}");
-					s.push("Stmts");
-					s.push("Vargroup");
+					s.push("9");
+					s.push("3");
 					//s.push("{");
 					break;
 				case 3: //Vargroup = kwdvars PPvarlist
 					s.pop();
-					s.push("PPvarlist");
+					s.push("4");
 					//s.push("kwdvars");
 					break;
 				case 4:	//Vargroup = eps
@@ -183,20 +177,20 @@ public class Main {
 				case 5: //PPvarlist = parens1 Varlist parens2
 					s.pop();
 					//s.push(")");
-					s.push("Varlist");
+					s.push("5");
 					//s.push("(");
 					break;
 				case 6: //Varlist = Vardecl semi Varlist
 					s.pop();
-					s.push("Varlist");
+					s.push("5");
 					//s.push(";");
 					break;
 				case 7: //Varlist = eps
 					break;
 				case 8: //Vardecl = Basekind Varid
 					s.pop();
-					s.push("Varid");
-					s.push("Basekind");
+					s.push("8");
+					s.push("7");
 					break;
 				case 9: //Basekind = int
 					s.pop();
@@ -212,60 +206,60 @@ public class Main {
 					break;
 				case 13: //Stmts = Stmt semi Stmts
 					s.pop();
-					s.push("Stmts");
+					s.push("9");
 					break;
 				case 14: //Stmts = eps
 					s.pop();
 					break;
 				case 15: //Stmt = Stasgn
 					s.pop();
-					s.push("Stasgn");
+					s.push("11");
 					break;
 				case 16: //Stmt = Stprint
 					s.pop();
-					s.push("Stprint");
+					s.push("12");
 					break;
 				case 17: //Stmt = Stwhile
 					s.pop();
-					s.push("Stwhile");
+					s.push("13");
 					break;
 				case 18: //Stasgn = Varid equal Expr
 					s.pop();
-					s.push("Expr");
+					s.push("19");
 					//equal
-					s.push("Varid");
+					s.push("8");
 					break;
 				case 19: //Stprint = kprint PPexprs
 					s.pop();
-					s.push("PPexprs");
+					s.push("14");
 					//kprint
 					break;
 				case 20: // Stwhile = kwdwhile PPexpr1 BBlock
 					s.pop();
-					s.push("BBlock");
-					s.push("PPexpr1");
+					s.push("2");
+					s.push("15");
 					//kdwhile
 					break;
 				case 21: // PPexprs = parens1 Exprlist parens2
 					s.pop();
 					//parens2
-					s.push("Exprlist");
+					s.push("16");
 					//parens1
 					break;
 				case 22: // PPexpr1 = parens1 Expr parens2
 					s.pop();
 					//parens2
-					s.push("Expr");
+					s.push("19");
 					//parens1
 					break;
 				case 23: // Exprlist = Expr Moreexprs
 					s.pop();
-					s.push("Moreexpirs");
-					s.push("Expr");
+					s.push("17");
+					s.push("19");
 					break; 
 				case 24:// Moreexprs = comma Exprlist
 					s.pop();
-					s.push("Exprlist");
+					s.push("16");
 					//comma
 					break;
 				case 25: // Moreexprs = eps
@@ -277,21 +271,21 @@ public class Main {
 					break;
 				case 27: // Expr = Rterm
 					s.pop();
-					s.push("Rterm");
+					s.push("21");
 					break;
 				case 28: // Rterm' = Opadd Term Rterm'
 					s.pop();
 					break;
 				case 29: // Rterm = Term
 					s.pop();
-					s.push("Term");
+					s.push("23");
 					break;
 				case 30:// Term' = Opmul Fact Term'
 					s.pop();
 					break;
 				case 31: // Term = Fact
 					s.pop();
-					s.push("Fact");
+					s.push("24");
 					break;
 				case 32: //Fact = int
 					s.pop();
@@ -307,7 +301,7 @@ public class Main {
 					break;
 				case 36: // Fact = PPexpr1
 					s.pop();
-					s.push("PPexpr1");
+					s.push("15");
 					break;
 				case 37: // Oprel = opeq
 					s.pop();
@@ -317,7 +311,7 @@ public class Main {
 					break;
 				case 39: // Oprel = Lthan
 					s.pop();
-					s.push("Lthan");
+					s.push("26");
 					break;
 				case 40:// Oprel = ople
 					s.pop();
@@ -327,7 +321,7 @@ public class Main {
 					break;
 				case 42: // Oprel = Gthan
 					s.pop();
-					s.push("Gthan");
+					s.push("27");
 					break;
 				case 43: // Lthan = angle1
 					s.pop();
