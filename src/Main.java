@@ -115,16 +115,53 @@ public class Main {
 					break;
 			}
 		
+			/*
+			1 - Pgm
+			2 - BBlock
+			3 - Vargroup
+			4 - PPvarlist
+			5 - Varlist
+			6 - Vardecl
+			7 - Basekind
+			8 - Varid
+			9 - Stmts
+			10 - Stmt
+			11 - Stasgn
+			12 - Stprint
+			13 - Stwhile
+			14 - PPexprs
+			15 - PPexprs1
+			16 - Exprlist
+			17 - Moreexprs
+			18 - Expr'
+			19 - Expr
+			20 - Rterm'
+			21 - Rterm
+			22 - Term'
+			23 - Term
+			24 - Fact
+			25 - Oprel
+			26 - Lthan
+			27 - Gthan
+			28 - Opadd
+			29 - Opmul
+			
+			
+			
+			
+			
+			
+			*/
+			
 		//Stack and it's manipulation
-		Stack<String> s = new Stack<>();
+		Stack<int> s = new Stack<>();
 		s.push("Pgm");	//so it runs the first time
 		stacktop = s.peek();
 		if (stacktop > 0) {
 			table_entry = ParseTable(stacktop, abs(token_number));	
 			switch (table_entry) {
 				case 1:	//Pgm = kwdprog BBlock
-					//TODO create Tree Node
-					
+
 					s.pop();
 					s.push("BBlock");
 					//s.push("kwdprog");
@@ -244,7 +281,6 @@ public class Main {
 					break;
 				case 28: // Rterm' = Opadd Term Rterm'
 					s.pop();
-					
 					break;
 				case 29: // Rterm = Term
 					s.pop();
