@@ -137,7 +137,7 @@ public class Main {
 			15 - PPexpr1
 			16 - Exprlist
 			17 - Moreexprs
-			18 - Expr'
+			18 - Expr's.push(
 			19 - Expr
 			20 - Rterm'
 			21 - Rterm
@@ -392,8 +392,11 @@ public class Main {
 				default:
 					System.out.println("Error");
 					break;
-					
-
-		}
+		} else {
+				//Match
+                System.out.println("Match and pop " + current_token);
+                s.pop();
+                current_token = scan.next();
+            }
 	}	
 }
