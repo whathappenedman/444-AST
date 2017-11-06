@@ -9,10 +9,47 @@ public class ParseTable {
 
 public int ParseTable(int non_terminal, int token) {
         int parse_table[][] = {
-
-			[
+			/*
+			Row Names
+			1 - Pgm
+			2 - BBlock
+			3 - Vargroup
+			4 - PPvarlist
+			5 - Varlist
+			6 - Vardecl
+			7 - Basekind
+			8 - Varid
+			9 - Stmts
+			10 - Stmt
+			11 - Stasgn
+			12 - Stprint
+			13 - Stwhile
+			14 - PPexprs
+			15 - PPexpr1
+			16 - Exprlist
+			17 - Moreexprs
+			18 - Expr's.push(
+			19 - Expr
+			20 - Rterm'
+			21 - Rterm
+			22 - Term'
+			23 - Term
+			24 - Fact
+			25 - Oprel
+			26 - Lthan
+			27 - Gthan
+			28 - Opadd
+			29 - Opmul
+			
+			
+			//Column Names
 			//[0,"kwdprog","brace1","brace2","kwdvars","eps","parens1","parens2","semi","int","float","string","id","equal","kprint","kwdwhile","comma","opeq","opne","ople","opge","angle1","angle2","plus","minus","aster","slash","caret","$"],
-			 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+			*/
+			
+			
+			
+			[
+		     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 			 [0,1,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,50],
 			 [0,51,2,51,51,51,51,51,50,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,51,50],
 			 [0,51,51,51,3,4,51,51,51,51,51,51,50,51,50,50,51,51,51,51,51,51,51,51,51,51,51,51,51],
