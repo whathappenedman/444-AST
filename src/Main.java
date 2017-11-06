@@ -1,3 +1,4 @@
+import node;
 import java.util.Scanner;
 
 public class Main {
@@ -161,17 +162,138 @@ public class Main {
 					s.push("Basekind");
 					break;
 				case 9: //Basekind = int
-					s.pop()
+					s.pop();
 					break;
 				case 10: //Basekind = float
-					s.pop()
+					s.pop();
 					break;
 				case 11: //Basekind = string
-					s.pop()
+					s.pop();
 					break;
 				case 12: //Varid = id
-					s.pop()
+					s.pop();
 					break;
+				case 13: //Stmts = Stmt semi Stmts
+					s.pop();
+					break;
+				case 14: //Stmts = eps
+					s.pop();
+					break;
+				case 15: //Stmt = Stasgn
+					s.pop();
+					break;
+				case 16: //Stmt = Stprint
+					s.pop();
+					break;
+				case 17: //Stmt = Stwhile
+					s.pop();
+					break;
+				case 18: //Stasgn = Varid equal Expr
+					s.pop();
+					break;
+				case 19: //Stprint = kprint PPexprs
+					s.pop();
+					break;
+				case 20: // Stwhile = kwdwhile PPexpr1 BBlock
+					s.pop();
+					break;
+				case 21: // PPexprs = parens1 Exprlist parens2
+					s.pop();
+					break;
+				case 22: // PPexpr1 = parens1 Expr parens2
+					s.pop();
+					break;
+				case 23: // Exprlist = Expr Moreexprs
+					s.pop();
+					break; 
+				case 24:// Moreexprs = comma Exprlist
+					s.pop();
+					break;
+				case 25: // Moreexprs = eps
+					s.pop();
+					break;
+				case 26: // Expr' = Oprel Rterm Expr'
+					s.pop();
+					break;
+				case 27: // Expr = Rterm
+					s.pop();
+					break;
+				case 28: // Rterm' = Opadd Term Rterm'
+					s.pop();
+					break;
+				case 29: // Rterm = Term
+					s.pop();
+					break;
+				case 30:// Term' = Opmul Fact Term'
+					s.pop();
+					break;
+				case 31: // Term = Fact
+					s.pop();
+					break;
+				case 32: //Fact = int
+					s.pop();
+					break;
+				case 33: // Fact = float
+					s.pop();
+					break;
+				case 34: //Fact = string
+					s.pop();
+					break;
+				case 35: // Fact = Varid
+					s.pop();
+					break;
+				case 36: // Fact = PPexpr1
+					s.pop();
+					break;
+				case 37: // Oprel = opeq
+					s.pop();
+					break;
+				case 38: // Oprel = opne
+					s.pop();
+					break;
+				case 39: // Oprel = Lthan
+					s.pop();
+					break;
+				case 40:// Oprel = ople
+					s.pop();
+					break;
+				case 41: // Oprel = opge
+					s.pop();
+					break;
+				case 42: // Oprel = Gthan
+					s.pop();
+					break;
+				case 43: // Lthan = angle1
+					s.pop();
+					break;
+				case 44: // Gthan = angle2
+					s.pop();
+					break;
+				case 45: // Opadd = plus
+					s.pop();
+					break;
+				case 46: // Opadd = minus
+					s.pop();
+					break;
+				case 47: // Opmul = aster
+					s.pop();
+					break;
+				case 48: //Opmul = slash
+					s.pop();
+					break;
+				case 49: // Opmul = caret
+					s.pop();
+					break;
+				case 50: // POP error
+					System.out.println("Pop Error");
+					break;
+				case 51: // SCAN error
+					System.out.println("Scan Error");
+					break;
+				default:
+					System.out.println("Error");
+					break;
+					
 
 		}
 	}	
