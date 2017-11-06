@@ -175,60 +175,87 @@ public class Main {
 					break;
 				case 13: //Stmts = Stmt semi Stmts
 					s.pop();
+					s.push("Stmts");
 					break;
 				case 14: //Stmts = eps
 					s.pop();
 					break;
 				case 15: //Stmt = Stasgn
 					s.pop();
+					s.push("Stasgn");
 					break;
 				case 16: //Stmt = Stprint
 					s.pop();
+					s.push("Stprint");
 					break;
 				case 17: //Stmt = Stwhile
 					s.pop();
+					s.push("Stwhile");
 					break;
 				case 18: //Stasgn = Varid equal Expr
 					s.pop();
+					s.push("Expr");
+					//equal
+					s.push("Varid");
 					break;
 				case 19: //Stprint = kprint PPexprs
 					s.pop();
+					s.push("PPexprs");
+					//kprint
 					break;
 				case 20: // Stwhile = kwdwhile PPexpr1 BBlock
 					s.pop();
+					s.push("BBlock");
+					s.push("PPexpr1");
+					//kdwhile
 					break;
 				case 21: // PPexprs = parens1 Exprlist parens2
 					s.pop();
+					//parens2
+					s.push("Exprlist");
+					//parens1
 					break;
 				case 22: // PPexpr1 = parens1 Expr parens2
 					s.pop();
+					//parens2
+					s.push("Expr");
+					//parens1
 					break;
 				case 23: // Exprlist = Expr Moreexprs
 					s.pop();
+					s.push("Moreexpirs");
+					s.push("Expr");
 					break; 
 				case 24:// Moreexprs = comma Exprlist
 					s.pop();
+					s.push("Exprlist");
+					//comma
 					break;
 				case 25: // Moreexprs = eps
 					s.pop();
 					break;
 				case 26: // Expr' = Oprel Rterm Expr'
 					s.pop();
+					
 					break;
 				case 27: // Expr = Rterm
 					s.pop();
+					s.push("Rterm");
 					break;
 				case 28: // Rterm' = Opadd Term Rterm'
 					s.pop();
+					
 					break;
 				case 29: // Rterm = Term
 					s.pop();
+					s.push("Term");
 					break;
 				case 30:// Term' = Opmul Fact Term'
 					s.pop();
 					break;
 				case 31: // Term = Fact
 					s.pop();
+					s.push("Fact");
 					break;
 				case 32: //Fact = int
 					s.pop();
@@ -244,6 +271,7 @@ public class Main {
 					break;
 				case 36: // Fact = PPexpr1
 					s.pop();
+					s.push("PPexpr1");
 					break;
 				case 37: // Oprel = opeq
 					s.pop();
@@ -253,6 +281,7 @@ public class Main {
 					break;
 				case 39: // Oprel = Lthan
 					s.pop();
+					s.push("Lthan");
 					break;
 				case 40:// Oprel = ople
 					s.pop();
@@ -262,6 +291,7 @@ public class Main {
 					break;
 				case 42: // Oprel = Gthan
 					s.pop();
+					s.push("Gthan");
 					break;
 				case 43: // Lthan = angle1
 					s.pop();
