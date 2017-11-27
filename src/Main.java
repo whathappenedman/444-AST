@@ -1,9 +1,103 @@
-import node;
+//import node;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
-
-
+	private static int tokenizer(String current_token){
+		int token_number;
+		switch (current_token) {
+			case "kwdprog":
+				token_number = -1;
+				//System.out.println("kwdprog");
+				break;
+			case "{":
+				token_number = -2;
+				break;
+			case "}":
+				token_number = -3;
+				break;
+			case "kwdvars":
+				token_number = -4;
+				break;
+			case "eps":	
+				token_number = -5;
+				break;
+			case "(":
+				token_number = -6;
+				break;
+			case ")":
+				token_number = -7;
+				break;
+			case ";":
+				token_number = -8;
+				break;
+			case "int":
+				token_number = -9;
+				break;	
+			case "float":
+				token_number = -10;
+				break;	
+			case "string":
+				token_number = -11;
+				break;	
+			case "id":
+				token_number = -12;
+				break;	
+			case "=":
+				token_number = -13;
+				break;	
+			case "kprint":
+				token_number = -14;
+				break;	
+			case "kwdwhile":
+				token_number = -15;
+				break;	
+			case ",":
+				token_number = -16;
+				break;	
+			case "==":
+				token_number = -17;
+				break;	
+			case "!=":
+				token_number = -18;
+				break;	
+			case "<=":
+				token_number = -19;
+				break;	
+			case ">=":
+				token_number = -20;
+				break;	
+			case "<":
+				token_number = -21;
+				break;	
+			case ">":
+				token_number = -22;
+				break;
+			case "+":
+				token_number = -23;
+				break;
+			case "-":
+				token_number = -24;
+				break;
+			case "*":
+				token_number = -25;
+				break;
+			case "/":
+				token_number = -26;
+				break;
+			case "^":
+				token_number = -27;
+				break;
+			case "$":
+				token_number = -28;
+				break;
+			default:
+				token_number = -29;
+				//System.out.println("non terminal");
+				break;
+		}
+		return token_number;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -27,136 +121,14 @@ public class Main {
 		//current_token = kb.next();			//Add after testing
 		while (kb.hasNext()) {
 			current_token = kb.next();			//testing. Remove after
-			switch (current_token) {
-				case "kwdprog":
-					token_number = -1;
-					//System.out.println("kwdprog");
-					break;
-				case "{":
-					token_number = -2;
-					break;
-				case "}":
-					token_number = -3;
-					break;
-				case "kwdvars":
-					token_number = -4;
-					break;
-				case "eps":	
-					token_number = -5;
-					break;
-				case "(":
-					token_number = -6;
-					break;
-				case ")":
-					token_number = -7;
-					break;
-				case ";":
-					token_number = -8;
-					break;
-				case "int":
-					token_number = -9;
-					break;	
-				case "float":
-					token_number = -10;
-					break;	
-				case "string":
-					token_number = -11;
-					break;	
-				case "id":
-					token_number = -12;
-					break;	
-				case "=":
-					token_number = -13;
-					break;	
-				case "kprint":
-					token_number = -14;
-					break;	
-				case "kwdwhile":
-					token_number = -15;
-					break;	
-				case ",":
-					token_number = -16;
-					break;	
-				case "==":
-					token_number = -17;
-					break;	
-				case "!=":
-					token_number = -18;
-					break;	
-				case "<=":
-					token_number = -19;
-					break;	
-				case ">=":
-					token_number = -20;
-					break;	
-				case "<":
-					token_number = -21;
-					break;	
-				case ">":
-					token_number = -22;
-					break;
-				case "+":
-					token_number = -23;
-					break;
-				case "-":
-					token_number = -24;
-					break;
-				case "*":
-					token_number = -25;
-					break;
-				case "/":
-					token_number = -26;
-					break;
-				case "^":
-					token_number = -27;
-					break;
-				case "$":
-					token_number = -28;
-					break;
-				default:
-					token_number = -29;
-					//System.out.println("non terminal");
-					break;
-			}
-		
-			/*
-			1 - Pgm
-			2 - BBlock
-			3 - Vargroup
-			4 - PPvarlist
-			5 - Varlist
-			6 - Vardecl
-			7 - Basekind
-			8 - Varid
-			9 - Stmts
-			10 - Stmt
-			11 - Stasgn
-			12 - Stprint
-			13 - Stwhile
-			14 - PPexprs
-			15 - PPexpr1
-			16 - Exprlist
-			17 - Moreexprs
-			18 - Expr's.push(
-			19 - Expr
-			20 - Rterm'
-			21 - Rterm
-			22 - Term'
-			23 - Term
-			24 - Fact
-			25 - Oprel
-			26 - Lthan
-			27 - Gthan
-			28 - Opadd
-			29 - Opmul
-			*/
-			
+			token_number = tokenizer(current_token);
+			System.out.println("token: " + current_token + " number: " + token_number );
 		//Stack and it's manipulation
-		Stack<int> s = new Stack<>();
-		s.push("Pgm");	//so it runs the first time
-		stacktop = s.peek();
+		Stack<Integer> s = new Stack<Integer>();
+		s.push(1);	//so it runs the first time
+		int stacktop = s.peek();
 		if (stacktop > 0) {
-			table_entry = ParseTable(stacktop, abs(token_number));	
+			int table_entry = ParseTable.lookUp(stacktop, Math.abs(token_number));	
 			switch (table_entry) {
 				case 1:	//Pgm = kwdprog BBlock
 					s.pop();
@@ -293,7 +265,7 @@ public class Main {
 					break;
 				case 28: // Rterm' = Opadd Term Rterm'
 					s.pop();
-					s.push20);
+					s.push(20);
 					s.push(23);
 					s.push(28);
 					break;
@@ -392,11 +364,13 @@ public class Main {
 				default:
 					System.out.println("Error");
 					break;
-		} else {
+		}} else {
 				//Match
                 System.out.println("Match and pop " + current_token);
                 s.pop();
-                current_token = scan.next();
+                current_token = kb.next();
             }
 	}	
+}
+	
 }
