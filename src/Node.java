@@ -1,40 +1,35 @@
 import java.util.*;
 
 public class Node {
+	
+	private Symbol symbol;
+	private boolean isTerminal;
+	ArrayList children = new ArrayList();		
 
-	public Node parentNode = null;
-	ArrayList children = new ArrayList();
-	public int id;
-	public String name;
-	public String value;
-		
-	public Node (Node ParentNode)
+	public Node (Symbol s, boolean terminal)
 	{
-		this.parentNode = ParentNode;
+		symbol = s;
+		isTerminal = terminal;	
 	}
-	public Node (Node ParentNode, String nodeName)
+	public Node (boolean terminal)
 	{
-		this.parentNode = ParentNode;
-		this.name = nodeName;	
-	}
-	public Node (Node ParentNode, String nodeName, String nodeValue, int nodeId)
-	{
-		this.parentNode = ParentNode;
-		this.name = nodeName;
-		this.value = nodeValue;	
-		this.id = nodeId;
+		isTerminal = terminal;
 	}	
 	public void addChild(Node node)
 	{
 		this.children.add(node);
 	}
-	public Node getParent()
+	public Symbol getSymbol()
 	{
-		return parentNode;
+		return symbol;
 	}
 	public Node getChild(int num)
 	{
 		return children.get(num);
+	}
+	public boolean getIsTerminal()
+	{
+		return isTerminal;
 	}
 
 }
