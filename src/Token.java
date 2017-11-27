@@ -13,20 +13,16 @@ public class Token {
 		tokenIdtoName(tokenId);
 	}
 
-	public int getId()
-	{
+	public int getId()	{
 		return this.id;
 	}
-	public String getName()
-	{
+	public String getName()	{
 		return this.name;
 	}
-	public String getType()
-	{
+	public String getType(){
 		return this.type;
 	}
-	public void tokenIdtoName (int id)
-	{
+	public void tokenIdtoName (int id) {
 		switch (tokenId) {
 			case 2:
 				type = "id";	
@@ -127,15 +123,26 @@ public class Token {
 				System.out.println("Error");
 		}
 				
-	
-		
-
-
-
-	
-		
-
 	}
+		
+	@Override
+	public String toString() {
+        if (tokenId == 2) {
+            return "(Tok: " + tokenId + " line= " + lineNumber + " str= \"" + tokenName + "\" int= " + tokenName + ")";
+        }
+        if (tokenId == 3) {
+            return "(Tok: " + tokenId + " line= " + lineNumber + " str= \"" + tokenName + "\" float= " + tokenName + ")";
+        }
+        return "(Tok: " + tokenId + " line= " + lineNumber + " str= \"" + tokenName + "\")";
+	}
+		
+
+
+
+	
+		
+
+
 
 
 }
