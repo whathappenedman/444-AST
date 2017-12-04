@@ -75,6 +75,7 @@ public class ParseTable {
         };
 	public static int lookUp(int non_terminal, int token) {
 
+		System.out.println(non_terminal + " X " + token);
         return parse_table[non_terminal][token];
 	}
 }
