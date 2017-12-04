@@ -4,7 +4,7 @@ public class Node {
 	
 	private Symbol symbol;
 	private boolean isTerminal;
-	ArrayList children = new ArrayList();		
+	ArrayList<Node> children = new ArrayList<Node>();		
 
 	public Node (Symbol s, boolean terminal)
 	{

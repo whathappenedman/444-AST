@@ -5,6 +5,7 @@ public class Token {
 	private int lineNum;
 	private String tokenName;	//ex) for "7", tokenName is 7
 	private String type; 		//ex) for "7", tokenType is int
+	
 	public Token(int lineNum, int tokenId, String tokenName)
 	{
 		this.lineNum = lineNum;
@@ -14,10 +15,10 @@ public class Token {
 	}
 
 	public int getId()	{
-		return this.id;
+		return tokenId;
 	}
 	public String getName()	{
-		return this.name;
+		return tokenName;
 	}
 	public String getType(){
 		return this.type;
@@ -117,9 +118,9 @@ public class Token {
 			case 99:
 				type = "error";
 			case 0:
-				type = "END"
-			break:
-				type = "NONE"
+				type = "END";
+			default:
+				type = "NONE";
 				System.out.println("Error");
 		}
 				
@@ -128,12 +129,12 @@ public class Token {
 	@Override
 	public String toString() {
         if (tokenId == 2) {
-            return "(Tok: " + tokenId + " line= " + lineNumber + " str= \"" + tokenName + "\" int= " + tokenName + ")";
+            return "(Tok: " + tokenId + " line= " + lineNum + " str= \"" + tokenName + "\" int= " + tokenName + ")";
         }
         if (tokenId == 3) {
-            return "(Tok: " + tokenId + " line= " + lineNumber + " str= \"" + tokenName + "\" float= " + tokenName + ")";
+            return "(Tok: " + tokenId + " line= " + lineNum + " str= \"" + tokenName + "\" float= " + tokenName + ")";
         }
-        return "(Tok: " + tokenId + " line= " + lineNumber + " str= \"" + tokenName + "\")";
+        return "(Tok: " + tokenId + " line= " + lineNum + " str= \"" + tokenName + "\")";
 	}
 		
 
